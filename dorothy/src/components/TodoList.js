@@ -6,15 +6,12 @@ import Todo from './Todo';
 
 const TodoList = ({tasks}) => {
 
-    
     return(
         <div>
-            <h3>This is in the TodoList file</h3>
-            {tasks.map(task => (
-                <Todo key = {task.id} {...task} />
-            ))}
-            
-           
+                <h3>This is in the TodoList file</h3>
+                {tasks.map(task => (
+                    <Todo key = {task.id} {...task} />
+                ))}
         </div>
     )
 }

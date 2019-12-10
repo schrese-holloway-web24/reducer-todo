@@ -9,9 +9,15 @@ export const reducer = (state, action) => {
                     {
                         item: action.payload,
                         completed: false,
-                        id: Date.now
+                        id: Date.now()
                     }
-                ]
+                ],
+                newItem: ''
+            }
+        case "CHANGE_HANDLER": 
+            return{
+                ...state, 
+                newItem: action.payload
             }
         default: 
             return state;
@@ -21,7 +27,6 @@ export const reducer = (state, action) => {
 
 //initial todo list
 export const initState = {
-
     tasks: [
         {
             item: 'Learn about reducers',
@@ -38,5 +43,6 @@ export const initState = {
             completed: false,
             id: 3892987591
         }
-    ]
+    ],
+    newItem: ''
 }

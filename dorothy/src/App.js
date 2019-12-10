@@ -9,13 +9,24 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
 function App() {
-  const [todoState] = useReducer(reducer, initState);
+  const [todoState, dispatch] = useReducer(reducer, initState);
+
+      //adds a net task to the todo list
+    const addTodo = e => {
+      e.preventDefault();
+      dispatch({type: "ADD_TODO", payload: todoState.newItem})
+    }
+
+    const changeHandler = e => {
+      e.preventDefault();
+      dispatch({type: "CHANGE_HANDLER", payload: e.target.value})
+    }
 
   console.log(todoState);
   return (
     <div className="App">
       <h1>Hello There</h1>
-      <TodoForm />
+      <TodoForm  newItem = {todoState.newItem} addTodo = {addTodo} changeHandler = {changeHandler} />
       <TodoList tasks = {todoState.tasks} />
     </div>
   );
