@@ -1,9 +1,9 @@
 //renders individual list items to TodoList.js
 import React from 'react';
 
-const Todo = ({item}) => {
+const Todo = ({item, completed, id, toggler}) => {
     return (
-        <div>
+        <div onClick = {() => toggler(id)} style = {completed ? {color: 'green'} : {}}>
             <p>{item}</p>
         </div>
     )

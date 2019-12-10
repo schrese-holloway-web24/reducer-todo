@@ -17,17 +17,21 @@ function App() {
       dispatch({type: "ADD_TODO", payload: todoState.newItem})
     }
 
+    //prevents default handling of the input in todoForm
     const changeHandler = e => {
       e.preventDefault();
       dispatch({type: "CHANGE_HANDLER", payload: e.target.value})
     }
+
+    const toggler = (id) => 
+        dispatch({type: "TOGGLER", payload: id})
 
   console.log(todoState);
   return (
     <div className="App">
       <h1>Hello There</h1>
       <TodoForm  newItem = {todoState.newItem} addTodo = {addTodo} changeHandler = {changeHandler} />
-      <TodoList tasks = {todoState.tasks} />
+      <TodoList tasks = {todoState.tasks} toggler = {toggler} />
     </div>
   );
 }

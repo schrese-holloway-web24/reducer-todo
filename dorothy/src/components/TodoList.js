@@ -4,13 +4,13 @@ import React from 'react';
 //components
 import Todo from './Todo';
 
-const TodoList = ({tasks}) => {
+const TodoList = ({tasks, toggler}) => {
 
     return(
         <div>
                 <h3>This is in the TodoList file</h3>
                 {tasks.map(task => (
-                    <Todo key = {task.id} {...task} />
+                    <Todo key = {task.id} {...task} toggler = {toggler} />
                 ))}
         </div>
     )

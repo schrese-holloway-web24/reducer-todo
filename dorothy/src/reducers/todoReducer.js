@@ -15,9 +15,22 @@ export const reducer = (state, action) => {
                 newItem: ''
             }
         case "CHANGE_HANDLER": 
-            return{
+            return {
                 ...state, 
                 newItem: action.payload
+            }
+        case "TOGGLER": 
+            return {
+                ...state,
+                tasks: state.tasks.map(task => {
+                    if(task.id === action.payload) {
+                        return {
+                            ...task,
+                            completed: !task.completed
+                        }
+                    }
+                    return task
+                })
             }
         default: 
             return state;
