@@ -1,6 +1,18 @@
 //reducer to be used in: 
 export const reducer = (state, action) => {
     switch (action.type) {
+        case "ADD_TODO":
+            return {
+                ...state, 
+                tasks: [
+                    ...state.tasks,
+                    {
+                        item: action.payload,
+                        completed: false,
+                        id: Date.now
+                    }
+                ]
+            }
         default: 
             return state;
     }
