@@ -26,11 +26,16 @@ function App() {
     const toggler = (id) => 
         dispatch({type: "TOGGLER", payload: id})
 
+    const clear = e => {
+      e.preventDefault();
+      dispatch({type: "CLEAR"})
+    }
+
   console.log(todoState);
   return (
     <div className="App">
       <h1>Hello There</h1>
-      <TodoForm  newItem = {todoState.newItem} addTodo = {addTodo} changeHandler = {changeHandler} />
+      <TodoForm  newItem = {todoState.newItem} addTodo = {addTodo} changeHandler = {changeHandler} clear = {clear}/>
       <TodoList tasks = {todoState.tasks} toggler = {toggler} />
     </div>
   );

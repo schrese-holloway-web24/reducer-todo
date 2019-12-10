@@ -4,7 +4,7 @@ import React from 'react';
 //components
 import Todo from './Todo';
 
-const TodoList = ({tasks, toggler}) => {
+const TodoList = ({tasks, toggler, clear}) => {
 
     return(
         <div>
@@ -12,6 +12,7 @@ const TodoList = ({tasks, toggler}) => {
                 {tasks.map(task => (
                     <Todo key = {task.id} {...task} toggler = {toggler} />
                 ))}
+                {/* <button onClick = {clear}>Clear Completed</button> */}
         </div>
     )
 }
