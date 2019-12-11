@@ -34,7 +34,7 @@ function App() {
   console.log(todoState);
   return (
     <div className="App">
-      <h1>Hello There</h1>
+      <h1>Welcome to your ToDo List</h1>
       <TodoForm  newItem = {todoState.newItem} addTodo = {addTodo} changeHandler = {changeHandler} clear = {clear}/>
       <TodoList tasks = {todoState.tasks} toggler = {toggler} />
     </div>

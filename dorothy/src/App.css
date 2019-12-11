@@ -1,5 +1,12 @@
 .App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10%;
   text-align: center;
+  background: #45b5aa;
+  width: 80%;
+
 }
 
 .App-logo {
@@ -35,4 +42,62 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App h1 {
+  font-size: 2.5rem;
+  color: #10162b;
+}
+
+form {
+  display: flex;
+  padding-left: 35%;
+}
+
+input {
+  width: 300px;
+  border: none;
+  border-bottom: #10162b;
+  margin-right: 1%;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  border: none;
+ 
+}
+
+button {
+  width: 80px;
+  height: 40px;
+  text-decoration: none;
+  background: #ffa891;
+  color: #10162b;
+  border: none;
+  margin: 1%;
+}
+
+button:hover{
+  background: #10162b;
+  color: #ffa891;
+}
+
+h3 {
+  font-size: 2rem;
+  color: #10162b;
+}
+
+.individual-item {
+  width: 50%;
+  padding-left: 25%;
+}
+
+p {
+  font-size: 2rem;
+  color: #0f4c81;
+  cursor: pointer;
+  text-align: center;
 }

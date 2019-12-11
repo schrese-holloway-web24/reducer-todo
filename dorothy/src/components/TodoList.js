@@ -8,7 +8,7 @@ const TodoList = ({tasks, toggler, clear}) => {
 
     return(
         <div>
-                <h3>This is in the TodoList file</h3>
+                <h3>Todo:</h3>
                 {tasks.map(task => (
                     <Todo key = {task.id} {...task} toggler = {toggler} />
                 ))}
